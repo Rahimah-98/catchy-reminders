@@ -1,6 +1,8 @@
 import { formatDistanceToNow } from 'date-fns';
 import { useNotifications } from '../../hooks/useNotifications';
 
+import { Bell } from 'lucide-react';
+
 export default function NotificationDropdown({ mobile = false }) {
   const { notifications, markAsRead, clearNotifications } = useNotifications();
 
@@ -28,7 +30,7 @@ export default function NotificationDropdown({ mobile = false }) {
       {notifications.length === 0 ? (
         <div className='flex flex-col items-center gap-2 px-6 py-10 text-center'>
           <div className='flex size-14 items-center justify-center rounded-2xl bg-primary-light'>
-            🔔
+            <Bell className="size-7 fill-yellow/50 text-yellow" />
           </div>
 
           <h4 className='font-semibold'>You're all caught up!</h4>
